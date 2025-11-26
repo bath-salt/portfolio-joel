@@ -1,0 +1,380 @@
+/* ================================
+   Earthy Beige + Brown Theme
+   ================================ */
+
+:root {
+  --bg: #f4f0e9;          /* Main background – soft beige */
+  --bg-alt: #ece4d6;      /* Slightly deeper beige */
+  --card: #ffffff;        /* Card background – clean white */
+  --accent: #7a9a6d;      /* Warm brown/orange accent */
+  --text: #2d2418;        /* Dark brown text */
+  --muted: #7b6b55;       /* Muted brown/grey */
+}
+
+/* ================================
+   Global
+   ================================ */
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(
+    circle at top,
+    #f9f4ec 0%,
+    var(--bg) 45%,
+    #e8dfd0 100%
+  );
+  color: var(--text);
+}
+
+/* ================================
+   Header / Navigation
+   ================================ */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(14px);
+  background: rgba(244, 240, 233, 0.92);
+  border-bottom: 1px solid rgba(180, 160, 130, 0.35);
+}
+
+.nav {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-title {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+nav a {
+  margin-left: 1.25rem;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--muted);
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.2rem;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--text);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ================================
+   Main Layout
+   ================================ */
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 3rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+/* ================================
+   HERO
+   ================================ */
+
+.tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(180, 150, 110, 0.45);
+  color: var(--muted);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.85),
+    rgba(244, 233, 215, 0.9)
+  );
+}
+
+.hero-title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin: 1rem 0 0.5rem;
+  color: var(--text);
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 34rem;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.btn {
+  border-radius: 999px;
+  padding: 0.65rem 1.1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: var(--accent);
+  color: #fff9f2;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid transparent;
+  transition: all 0.18s ease;
+}
+
+.btn:hover {
+  filter: brightness(1.05);
+  box-shadow: 0 6px 14px rgba(125, 84, 40, 0.25);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(160, 130, 90, 0.7);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* ================================
+   Section Headings
+   ================================ */
+
+h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.25rem;
+  color: var(--text);
+}
+
+.section-caption {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 0.2rem;
+}
+
+.section-description {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+  max-width: 34rem;
+}
+
+.body-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+/* ================================
+   Cards + Grid Layout
+   ================================ */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 1rem;
+  border: 1px solid rgba(190, 170, 140, 0.35);
+  padding: 1rem;
+  box-shadow: 0 10px 24px rgba(100, 80, 50, 0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 30px rgba(90, 70, 40, 0.12);
+}
+
+.card h3 {
+  font-size: 1rem;
+  margin: 0 0 0.3rem;
+  color: var(--text);
+}
+
+.card small {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: var(--text);
+  margin-top: 0.45rem;
+  line-height: 1.5;
+}
+
+.pill-row {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.pill {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(190, 160, 120, 0.7);
+  color: var(--muted);
+  background: #f7efe2;
+}
+
+/* ================================
+   Layout Utility (Two columns)
+   ================================ */
+
+.two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0.2rem 0 0;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.list li {
+  margin-bottom: 0.35rem;
+}
+
+.list li span {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* ================================
+   Contact Section
+   ================================ */
+
+.contact-card {
+  background: var(--card);
+  border-radius: 1rem;
+  border: 1px solid rgba(190, 170, 140, 0.5);
+  padding: 1rem;
+  font-size: 0.9rem;
+  box-shadow: 0 10px 22px rgba(110, 90, 60, 0.08);
+}
+
+.contact-row {
+  margin-top: 0.75rem;
+}
+
+.contact-row div {
+  margin-bottom: 0.4rem;
+}
+
+.contact-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
+.contact-label-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;          /* space between icon and text */
+}
+
+.contact-label-icon svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+
+a.link {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+a.link:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   Footer
+   ================================ */
+
+footer {
+  border-top: 1px solid rgba(190, 170, 140, 0.5);
+  padding: 1rem 1.25rem 2rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ================================
+   Mobile Responsive
+   ================================ */
+
+@media (max-width: 720px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  nav a {
+    margin-left: 0.75rem;
+  }
+
+  .two-col {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  main {
+    padding-top: 2rem;
+  }
+}
