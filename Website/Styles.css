@@ -389,14 +389,22 @@ footer {
   margin: 0.75rem 0 1rem;
 }
 
-/* FORCE smaller thumbnails */
+/* thumbnails, not giant images */
 .project-image-grid img {
-  width: 100% !important;
-  height: 180px !important;   /* change this number to adjust size */
+  width: 100%;
+  height: auto;
+  max-height: 220px;     /* tweak this number higher/lower for size */
   object-fit: cover;
   border-radius: 0.9rem;
   border: 1px solid rgba(190, 170, 140, 0.4);
 }
+
+@media (max-width: 700px) {
+  .project-image-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 
 .project-media-link {
@@ -413,13 +421,5 @@ footer {
   content: "▶";
   font-size: 0.8rem;
 }
-
-/* Mobile layout: stack vertically */
-@media (max-width: 700px) {
-  .project-image-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 
 }
