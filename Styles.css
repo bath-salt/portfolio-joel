@@ -384,20 +384,20 @@ footer {
 
 .project-image-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 0.75rem;
-  margin: 0.75rem 0 1rem;
+  margin-bottom: 1rem;
 }
 
-/* thumbnails, not giant images */
 .project-image-grid img {
-  width: 100%;
-  height: auto;
-  max-height: 220px;     /* tweak this number higher/lower for size */
-  object-fit: cover;
+  width: 100% !important;
+  height: 160px !important;   /* ← ADJUST THIS NUMBER FOR SIZE */
+  object-fit: cover !important;
   border-radius: 0.9rem;
   border: 1px solid rgba(190, 170, 140, 0.4);
+  display: block;
 }
+
 
 @media (max-width: 700px) {
   .project-image-grid {
