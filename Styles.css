@@ -372,8 +372,13 @@ footer {
   main {
     padding-top: 2rem;
   }
+}
 
-  .project-image {
+/* ================================
+   Project Images (apply to ALL sizes)
+   ================================ */
+
+.project-image {
   width: 100%;
   border-radius: 0.9rem;
   margin-bottom: 0.75rem;
@@ -389,24 +394,24 @@ footer {
   margin-bottom: 1rem;
 }
 
+/* thumbnails */
 .project-image-grid img {
-  width: 100% !important;
-  height: 160px !important;   /* ← ADJUST THIS NUMBER FOR SIZE */
-  object-fit: cover !important;
+  width: 100%;
+  height: 200px;       /* ← adjust this to control height */
+  object-fit: fill;
   border-radius: 0.9rem;
   border: 1px solid rgba(190, 170, 140, 0.4);
   display: block;
 }
 
-
+/* Stack images on small screens */
 @media (max-width: 700px) {
   .project-image-grid {
     grid-template-columns: 1fr;
   }
 }
 
-
-
+/* Link with play icon */
 .project-media-link {
   display: inline-flex;
   align-items: center;
@@ -422,4 +427,3 @@ footer {
   font-size: 0.8rem;
 }
 
-}
